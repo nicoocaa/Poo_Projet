@@ -1,6 +1,6 @@
 #include "jeux.hpp"
 
-Personnage::Personnage() : a_vie(0), a_attaque(0), a_defense(0), a_energie(0)
+Personnage::Personnage()  
 {
 }
 
@@ -8,7 +8,7 @@ Personnage::~Personnage()
 {
 }
 
-Vilain::Vilain() : Personnage(), pts_vie(0), pts_attaque(0), pts_energie(0), pts_defense(0)
+Vilain::Vilain() : Personnage(), pts_vie(0), attaque1(0), attaque2(0), attaque3(0), pts_energie(0), defense1(0), defense2(0), defense3(0)
 {
 }
 
@@ -30,10 +30,24 @@ void Vilain::set_vie(int pts_vie)
 	}
 }
 
-void Vilain::set_attaque(int pts_attaque)
+void Vilain::set_attaque1(int attaque1)
 {
 	if (this != nullptr) {
-		this->pts_attaque = pts_attaque;
+		this->attaque1 = attaque1;
+	}
+}
+
+void Vilain::set_attaque2(int attaque2)
+{
+	if (this != nullptr) {
+		this->attaque2 = attaque2;
+	}
+}
+
+void Vilain::set_attaque3(int attaque3)
+{
+	if (this != nullptr) {
+		this->attaque3 = attaque3;
 	}
 }
 
@@ -44,10 +58,24 @@ void Vilain::set_energie(int pts_energie)
 	}
 }
 
-void Vilain::set_defense(int pts_defense)
+void Vilain::set_defense2(int defense2)
 {
 	if (this != nullptr) {
-		this->pts_defense = pts_defense;
+		this->defense2 = defense2;
+	}
+}
+
+void Vilain::set_defense1(int defense1)
+{
+	if (this != nullptr) {
+		this->defense1 = defense1;
+	}
+}
+
+void Vilain::set_defense3(int defense3)
+{
+	if (this != nullptr) {
+		this->defense3 = defense3;
 	}
 }
 
@@ -61,9 +89,19 @@ int Vilain::get_vie() const
 	return pts_vie;
 }
 
-int Vilain::get_attaque() const
+int Vilain::get_attaque1() const
 {
-	return pts_attaque;
+	return attaque1;
+}
+
+int Vilain::get_attaque2() const
+{
+	return attaque2;
+}
+
+int Vilain::get_attaque3() const
+{
+	return attaque3;
 }
 
 int Vilain::get_energie() const
@@ -71,12 +109,22 @@ int Vilain::get_energie() const
 	return pts_energie;
 }
 
-int Vilain::get_defense() const
+int Vilain::get_defense1() const
 {
-	return pts_defense;
+	return defense1;
 }
 
-Hero::Hero() : Personnage(), pts_vie(0), pts_attaque(0), pts_energie(0), pts_defense(0)
+int Vilain::get_defense2() const
+{
+	return defense2;
+}
+
+int Vilain::get_defense3() const
+{
+	return defense3;
+}
+
+Hero::Hero() : Personnage(), pts_vie(0), attaque1(0), attaque2(0), attaque3(0), pts_energie(0), defense1(0), defense2(0), defense3(0)
 {
 }
 
@@ -98,12 +146,28 @@ void Hero::set_vie(int pts_vie)
 	}
 }
 
-void Hero::set_attaque(int pts_attaque)
+
+void Hero::set_attaque1(int pts_attaque)
 {
 	if (this != nullptr) {
-		this->pts_attaque = pts_attaque;
+		this->attaque1 = attaque1;
 	}
 }
+
+void Hero::set_attaque2(int pts_attaque)
+{
+	if (this != nullptr) {
+		this->attaque2 = attaque2;
+	}
+}
+
+void Hero::set_attaque3(int pts_attaque)
+{
+	if (this != nullptr) {
+		this->attaque3 = attaque3;
+	}
+}
+
 
 void Hero::set_energie(int pts_energie)
 {
@@ -112,12 +176,27 @@ void Hero::set_energie(int pts_energie)
 	}
 }
 
-void Hero::set_defense(int pts_defense)
+void Hero::set_defense2(int defense2)
 {
 	if (this != nullptr) {
-		this->pts_defense = pts_defense;
+		this->defense2 = defense2;
 	}
 }
+
+void Hero::set_defense1(int defense1)
+{
+	if (this != nullptr) {
+		this->defense1 = defense1;
+	}
+}
+
+void Hero::set_defense3(int defense3)
+{
+	if (this != nullptr) {
+		this->defense3 = defense3;
+	}
+}
+
 
 std::string Hero::get_name() const
 {
@@ -129,9 +208,19 @@ int Hero::get_vie() const
 	return pts_vie;
 }
 
-int Hero::get_attaque() const
+int Hero::get_attaque1() const
 {
-	return pts_attaque;
+	return attaque1;
+}
+
+int Hero::get_attaque2() const
+{
+	return attaque2;
+}
+
+int Hero::get_attaque3() const
+{
+	return attaque3;
 }
 
 int Hero::get_energie() const
@@ -139,7 +228,17 @@ int Hero::get_energie() const
 	return pts_energie;
 }
 
-int Hero::get_defense() const
+int Hero::get_defense1() const
 {
-	return pts_energie;
+	return defense1;
+}
+
+int Hero::get_defense2() const
+{
+	return defense2;
+}
+
+int Hero::get_defense3() const
+{
+	return defense3;
 }

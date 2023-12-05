@@ -3,13 +3,17 @@
 
 void read(const Personnage& Personnage)
 {
-    std::cout << "Voici le nom du personnage : " << Personnage.get_name() << std::endl << "Voici ces points de vie : " << Personnage.get_vie() << std::endl << "Voici son energie : " << Personnage.get_energie() << std::endl << "" << std::endl;
+
+    std::cout << "Voici le nom du personnage : " << Personnage.get_name() << std::endl
+    << "Voici ces points de vie : " << Personnage.get_vie() << std::endl 
+    << "Voici son energie : " << Personnage.get_energie() << std::endl 
+    << "" << std::endl;
 }
 
 int main()
 {
     Vilain a_var = Vilain();
-    a_var.set_name("Perso 1");
+    a_var.set_name("shrek");
     a_var.set_vie(100);
    // a_var.set_attaque(8);
     a_var.set_energie(50);
@@ -17,12 +21,45 @@ int main()
 
 
     Hero b_var = Hero();
-    b_var.set_name("Perso 2");
+    b_var.set_name("melody");
     b_var.set_vie(100);
     // b_var.set_attaque(8);
     b_var.set_energie(50);
     //b_var.set_defense(10);
 
-    read(a_var);
-    read(b_var);
+   // Personnage perso;
+
+    int numero;
+    
+    cout << "1 pour Shrek" << endl;
+    cout << "2 pour melody" << endl;
+    cout << "" << endl;
+    cin >> numero;
+    cout << "" << endl;
+
+    if (numero == 1)
+    {
+        read(a_var);
+    }
+    else if (numero == 2)
+    {
+        read(b_var);
+    }
+    /*
+    else if (numero == 3)
+    {
+        perso.retirer_dargent();
+        main();
+    }
+    else if (numero == 4)
+    {
+        perso.consultation();
+        main();
+    }
+    else if (numero == 5)
+    {
+        return 0;
+    }
+    return 0;
+    */
 }
