@@ -1,6 +1,10 @@
-#include <iostream>
 #ifndef JEUX
 #define JEUX
+#include <iostream>
+#include <sstream>
+
+#include <Windows.h>
+
 
 using namespace std;
 
@@ -78,7 +82,7 @@ private:
 public:
 
 	Hero();
-	~Hero();
+	~Hero(); 
 
 	void set_name(string name);
 	void set_vie(int pts_vie);
@@ -104,4 +108,12 @@ public:
 	void revive;
 };
 
+class MBuf: public std::stringbuf {
+public:
+	int sync() {
+		fputs(string().c_str(), stdout);
+		string("");
+		return 0;
+	}
+};
 #endif
