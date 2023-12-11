@@ -1,12 +1,32 @@
 #include "jeux.hpp"
 
+bool Tour(bool tour)
+{
+    if (tour = true)
+    {
+        cout << "Tour du Joueur 1." << endl;
+    }
+    else if (tour = false)
+    {
+        cout << "Tour du joueur 2." << endl;
+    }
+    if (tour = true)
+    {
+        tour = false;
+    }
+    else
+    {
+        tour = true;
+    }
+    return tour;
+}
 
 void read(const Personnage& Personnage)
 {
 
-    cout << "Voici le nom du personnage : " << Personnage.get_name() << endl
-    cout << "Voici ces points de vie : " << Personnage.get_vie() << endl 
-    cout << "Voici son energie : " << Personnage.get_energie() << endl 
+    cout << "Voici le nom du personnage : " << Personnage.get_name() << endl ;
+    cout << "Voici ces points de vie : " << Personnage.get_vie() << endl ;
+    cout << "Voici son energie : " << Personnage.get_energie() << endl ;
     cout << "" << endl;
 }
 
@@ -30,7 +50,12 @@ int main()
    // Personnage perso;
 
     int numero;
+    Personnage *p = nullptr;
+    bool tour = true;
     
+    Tour(tour);
+    tour == Tour(tour);
+
     cout << "1 pour Shrek" << endl;
     cout << "2 pour melody" << endl;
     cout << "" << endl;
@@ -39,11 +64,13 @@ int main()
 
     if (numero == 1)
     {
-        read(a_var);
+        p = new Vilain ;
+        read(a_var) ;
     }
     else if (numero == 2)
     {
-        read(b_var);
+        p = new Hero ;
+        read(b_var) ;
     }
     /*
     else if (numero == 3)
@@ -63,9 +90,10 @@ int main()
     return 0;
     */
 
+    Tour(tour);
+    tour == Tour(tour);
 
-
-    while (vie != 0 && lv != 0)
+    while (vie != 0)
     {
 
         SetConsoleOutputCP(CP_UTF8);
@@ -142,7 +170,5 @@ int main()
                 energie(lv);
             }
         }
-
-
     }
 }

@@ -5,20 +5,20 @@
 using namespace std;
 
 
-class MBuf : public std::stringbuf {
-public:
-	int sync() {
-		fputs(str().c_str(), stdout);
-		str("");
-		return 0;
-
-	}
-};
-
-class Personnage {
+class Personnage 
+{
 
 private:
-	string vide;
+	string name;
+	int pts_vie;
+	int attaque1;
+	int attaque2;
+	int attaque3;
+	int pts_energie;
+	int defense1;
+	int defense2;
+	int defense3;
+
 public:
 
 	Personnage();
@@ -33,29 +33,17 @@ public:
 	virtual int get_defense1() const = 0;
 	virtual int get_defense2() const = 0;
 	virtual int get_defense3() const = 0;
-<<<<<<< HEAD
-	virtual bool tour(bool tour);
 	virtual int degat_recu() const = 0;
-=======
 	void energie(int energie);
 	void pv(int pv);
 
->>>>>>> b8e5594083cdf5d1e2b12d1db0d97dd5afe4651d
 
 };
 
 class Vilain :public Personnage
 {
 private:
-	string name;
-	int pts_vie;
-	int attaque1;
-	int attaque2;
-	int attaque3;
-	int pts_energie;
-	int defense1;
-	int defense2;
-	int defense3;
+	string rire;
 public:
 	Vilain();
 	~Vilain();
@@ -86,15 +74,7 @@ class Hero :public Personnage
 {
 
 private:
-	string name;
-	int pts_vie;
-	int attaque1;
-	int attaque2;
-	int attaque3;
-	int pts_energie;
-	int defense1;
-	int defense2;
-	int defense3;
+	
 public:
 
 	Hero();
@@ -120,6 +100,8 @@ public:
 	int get_defense2() const;
 	int get_defense3() const;
 	int degat_recu(int att, int eng) const;
+
+	void revive;
 };
 
 #endif

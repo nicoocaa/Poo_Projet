@@ -12,20 +12,12 @@ Vilain::Vilain() : Personnage(), pts_vie(0), attaque1(0), attaque2(0), attaque3(
 {
 }
 
-void Personnage::tour(bool tour)
+void Personnage::energie(int energie)
 {
-	if (tour = true)
-	{
-		tour = false
-	}
-	else
-	{
-		tour = true
-	}
+}
 
-	if (this != nullptr) {
-		this->tour = tour
-	}
+void Personnage::pv(int pv)
+{
 }
 
 Vilain::~Vilain()
@@ -266,7 +258,7 @@ int Hero::get_defense3() const
 	return defense3;
 }
 
-<<<<<<< HEAD
+
 int Hero::degat_recu(int att, int eng) const
 {
 	int degat;
@@ -274,7 +266,6 @@ int Hero::degat_recu(int att, int eng) const
 	return degat;
 }
 
-=======
 
 void pv(int pv) {
 
