@@ -12,8 +12,9 @@ Vilain::Vilain() : Personnage(), pts_vie(0), attaque1(0), attaque2(0), attaque3(
 {
 }
 
-void Personnage::tour(bool tour)
+void Personnage::energie(int energie)
 {
+<<<<<<< HEAD
 	if (tour = true)
 	{
 		tour = false;
@@ -21,6 +22,12 @@ void Personnage::tour(bool tour)
 	{
 		tour = true;
 	}
+=======
+}
+
+void Personnage::pv(int pv)
+{
+>>>>>>> b4550078242912c7ef9a26f4a038a6ccc8ba4126
 }
 
 Vilain::~Vilain()
