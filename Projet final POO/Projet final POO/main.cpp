@@ -62,4 +62,87 @@ int main()
     }
     return 0;
     */
+
+
+
+    while (vie != 0 && lv != 0)
+    {
+
+        SetConsoleOutputCP(CP_UTF8);
+        setvbuf(stdout, nullptr, _IONBF, 0);
+        MBuf buf;
+        std::cout.rdbuf(&buf);
+
+        cout << u8"1 : retirer pv" << endl;
+        cout << u8"2 : retirer energie" << endl;
+        int choix = 0;
+        cin >> choix;
+
+        if (choix == 1) {
+            cout << "conbien de pv ?" << endl;
+            cout << "1 : 20" << endl;
+            cout << "2 : 40" << endl;
+            cout << "3 : 60" << endl;
+            cout << "4 : 80" << endl;
+            cout << "5 : 100" << endl;
+
+            int choix = 0;
+            cin >> choix;
+
+            if (choix == 1) {
+                vie -= 20;
+                pv(vie);
+            }
+            if (choix == 2) {
+                vie -= 40;
+                pv(vie);
+            }
+            if (choix == 3) {
+                vie -= 60;
+                pv(vie);
+            }
+            if (choix == 4) {
+                vie -= 80;
+                pv(vie);
+            }
+            if (choix == 5) {
+                vie -= 100;
+                pv(vie);
+            }
+        }
+        if (choix == 2) {
+            cout << "conbien d'energie ?" << endl;
+            cout << "1 : 20" << endl;
+            cout << "2 : 40" << endl;
+            cout << "3 : 60" << endl;
+            cout << "4 : 80" << endl;
+            cout << "5 : 100" << endl;
+
+            int choix = 0;
+            cin >> choix;
+
+            if (choix == 1) {
+                lv -= 20;
+                energie(lv);
+            }
+            if (choix == 2) {
+                lv -= 40;
+                energie(lv);
+            }
+            if (choix == 3) {
+                lv -= 60;
+                energie(lv);
+            }
+            if (choix == 4) {
+                lv -= 80;
+                energie(lv);
+            }
+            if (choix == 5) {
+                lv -= 100;
+                energie(lv);
+            }
+        }
+
+
+    }
 }
