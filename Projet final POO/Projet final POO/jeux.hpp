@@ -1,6 +1,10 @@
-#include <iostream>
 #ifndef JEUX
 #define JEUX
+#include <iostream>
+#include <sstream>
+
+#include <Windows.h>
+
 
 using namespace std;
 
@@ -102,4 +106,12 @@ public:
 	int get_defense3() const;
 };
 
+class MBuf: public std::stringbuf {
+public:
+	int sync() {
+		fputs(string().c_str(), stdout);
+		string("");
+		return 0;
+	}
+};
 #endif
