@@ -1,4 +1,4 @@
-#include "jeux.hpp"
+﻿#include "jeux.hpp"
 
 Personnage::Personnage()  
 {
@@ -12,11 +12,27 @@ Vilain::Vilain() : Personnage(), pts_vie(0), attaque1(0), attaque2(0), attaque3(
 {
 }
 
+void Personnage::tour(bool tour)
+{
+	if (tour = true)
+	{
+		tour = false
+	}
+	else
+	{
+		tour = true
+	}
+
+	if (this != nullptr) {
+		this->tour = tour
+	}
+}
+
 Vilain::~Vilain()
 {
 }
 
-void Vilain::set_name(std::string name)
+void Vilain::set_name(string name)
 {
 	if (this != nullptr) {
 		this->name = name;
@@ -79,9 +95,9 @@ void Vilain::set_defense3(int defense3)
 	}
 }
 
-std::string Vilain::get_name() const
+string Vilain::get_name() const
 {
-	return std::string(name);
+	return string(name);
 }
 
 int Vilain::get_vie() const
@@ -124,6 +140,13 @@ int Vilain::get_defense3() const
 	return defense3;
 }
 
+int Vilain::degat_recu(int att, int eng) const
+{
+	int degat;
+	degat = att - eng;
+	return degat;
+}
+
 Hero::Hero() : Personnage(), pts_vie(0), attaque1(0), attaque2(0), attaque3(0), pts_energie(0), defense1(0), defense2(0), defense3(0)
 {
 }
@@ -132,7 +155,7 @@ Hero::~Hero()
 {
 }
 
-void Hero::set_name(std::string name)
+void Hero::set_name(string name)
 {
 	if (this != nullptr) {
 		this->name = name;
@@ -198,9 +221,9 @@ void Hero::set_defense3(int defense3)
 }
 
 
-std::string Hero::get_name() const
+string Hero::get_name() const
 {
-	return std::string(name);
+	return string(name);
 }
 
 int Hero::get_vie() const
@@ -242,3 +265,50 @@ int Hero::get_defense3() const
 {
 	return defense3;
 }
+
+<<<<<<< HEAD
+int Hero::degat_recu(int att, int eng) const
+{
+	int degat;
+	degat = att - eng;
+	return degat;
+}
+
+=======
+
+void pv(int pv) {
+
+	SetConsoleOutputCP(CP_UTF8);
+	setvbuf(stdout, nullptr, _IONBF, 0);
+	int numBlocks = pv / 10;
+	int numSpaces = 10 - numBlocks;
+
+	cout << u8"Énergie: ";
+	for (int i = 0; i < numBlocks; ++i) {
+		cout << u8"█";
+	}
+	for (int i = 0; i < numSpaces; ++i) {
+		cout << u8"▒";
+	}
+
+	cout << " " << pv << "%" << endl;
+}
+
+
+void energie(int energie) {
+	SetConsoleOutputCP(CP_UTF8);
+
+	int numBlocks = energie / 10;
+	int numSpaces = 10 - numBlocks;
+
+	cout << u8"Énergie: ";
+	for (int i = 0; i < numBlocks; ++i) {
+		cout << u8"█";
+	}
+	for (int i = 0; i < numSpaces; ++i) {
+		cout << u8"▒";
+	}
+
+	cout << " " << energie << "%" << endl;
+}
+>>>>>>> b8e5594083cdf5d1e2b12d1db0d97dd5afe4651d
