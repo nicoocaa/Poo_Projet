@@ -37,11 +37,21 @@ public:
 	virtual int get_defense1() const = 0;
 	virtual int get_defense2() const = 0;
 	virtual int get_defense3() const = 0;
+<<<<<<< HEAD
+
+	void tour(bool tour);
+	
+
+	void energie(int energie);
+	void pv(int pv);
+
+=======
 	virtual int degat_recu() const = 0;
 	void energie(int energie);
 	void pv(int pv);
 
 
+>>>>>>> b4550078242912c7ef9a26f4a038a6ccc8ba4126
 };
 
 class Vilain :public Personnage
@@ -107,12 +117,4 @@ public:
 
 };
 
-class MBuf: public std::stringbuf {
-public:
-	int sync() {
-		fputs(string().c_str(), stdout);
-		string("");
-		return 0;
-	}
-};
 #endif
