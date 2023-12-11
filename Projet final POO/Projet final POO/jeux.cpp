@@ -56,13 +56,9 @@ int Vilain::get_energie() const
 }
 
 
-
-<<<<<<< HEAD
 Hero::Hero() : Personnage(), pts_vie(0), pts_energie(0)
-=======
-int Vilain::get_defense3() const
 {
-	return defense3;
+	
 }
 
 int Vilain::degat_recu(int att, int eng) const
@@ -84,11 +80,6 @@ void Hero::revive()
 		}
 	}
 	Onlyone += 1;
-}
-
-Hero::Hero() : Personnage(), pts_vie(0), attaque1(0), attaque2(0), attaque3(0), pts_energie(0), defense1(0), defense2(0), defense3(0)
->>>>>>> 2aa9e5b7cb7571d2c3d552d50fa9aabb03e3fbf1
-{
 }
 
 Hero::~Hero()
@@ -168,9 +159,6 @@ void Vilain::pv() const{
 
 	cout << " " << pv << "%" << endl;
 }
-
-
-
 
 void Hero::energie() const{
 	SetConsoleOutputCP(CP_UTF8);
