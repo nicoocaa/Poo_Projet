@@ -79,7 +79,7 @@ private:
 public:
 
 	Hero();
-	~Hero();
+	~Hero(); 
 
 	void set_name(std::string name);
 	void set_vie(int pts_vie);
