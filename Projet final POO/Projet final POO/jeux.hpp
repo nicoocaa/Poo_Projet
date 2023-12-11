@@ -75,11 +75,15 @@ class Hero :public Personnage
 {
 
 private:
+<<<<<<< HEAD
 	string name;
 	int pts_vie;
 
 	int pts_energie;
 	
+=======
+	void revive();
+>>>>>>> 2aa9e5b7cb7571d2c3d552d50fa9aabb03e3fbf1
 public:
 
 	Hero();
@@ -94,9 +98,12 @@ public:
 	string get_name() const;
 	int get_vie() const;
 
+<<<<<<< HEAD
 	int get_energie() const;
 	void energie() const;
 	void pv() const;
+=======
+>>>>>>> 2aa9e5b7cb7571d2c3d552d50fa9aabb03e3fbf1
 };
 
 #endif
