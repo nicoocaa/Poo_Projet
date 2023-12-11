@@ -1,4 +1,4 @@
-#include "jeux.hpp"
+﻿#include "jeux.hpp"
 
 Personnage::Personnage()  
 {
@@ -241,4 +241,41 @@ int Hero::get_defense2() const
 int Hero::get_defense3() const
 {
 	return defense3;
+}
+
+
+void pv(int pv) {
+
+	SetConsoleOutputCP(CP_UTF8);
+	setvbuf(stdout, nullptr, _IONBF, 0);
+	int numBlocks = pv / 10;
+	int numSpaces = 10 - numBlocks;
+
+	cout << u8"Énergie: ";
+	for (int i = 0; i < numBlocks; ++i) {
+		cout << u8"█";
+	}
+	for (int i = 0; i < numSpaces; ++i) {
+		cout << u8"▒";
+	}
+
+	cout << " " << pv << "%" << endl;
+}
+
+
+void energie(int energie) {
+	SetConsoleOutputCP(CP_UTF8);
+
+	int numBlocks = energie / 10;
+	int numSpaces = 10 - numBlocks;
+
+	cout << u8"Énergie: ";
+	for (int i = 0; i < numBlocks; ++i) {
+		cout << u8"█";
+	}
+	for (int i = 0; i < numSpaces; ++i) {
+		cout << u8"▒";
+	}
+
+	cout << " " << energie << "%" << endl;
 }

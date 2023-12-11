@@ -4,6 +4,17 @@
 
 using namespace std;
 
+
+class MBuf : public std::stringbuf {
+public:
+	int sync() {
+		fputs(str().c_str(), stdout);
+		str("");
+		return 0;
+
+	}
+};
+
 class Personnage {
 
 private:
@@ -22,6 +33,8 @@ public:
 	virtual int get_defense1() const=0;
 	virtual int get_defense2() const = 0;
 	virtual int get_defense3() const = 0;
+	void energie(int energie);
+	void pv(int pv);
 
 
 };
