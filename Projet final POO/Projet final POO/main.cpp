@@ -61,17 +61,17 @@ int main()
    // Personnage perso;
 
     int numero;
-<<<<<<< HEAD
+
     Personnage *p = nullptr;
     bool tour = true;
     
     Tour(tour);
     tour == Tour(tour);
 
-=======
+
     int numero2;
     cout << "Choix de votre vilain :" << endl;
->>>>>>> 26c8c11b236d8fa89651b762203c3449f5ec478c
+
     cout << "1 pour Shrek" << endl;
     cout << "" << endl;
     cin >> numero;
@@ -79,10 +79,10 @@ int main()
 
     if (numero == 1)
     {
-<<<<<<< HEAD
+
         p = new Vilain ;
         read(a_var) ;
-=======
+
         read(a_var);
 
         cout.rdbuf(&buf);
@@ -121,7 +121,6 @@ int main()
         cout <<u8"  ⠀⠀⠀⠀⠀⠀⠀⠀⣼⡇⠀⠀⠀⠀⠀⣸⡗⠀⠀⠀⠀⠀⠀⠙⠷⡄⣀⠀⠀⠻⠟⠃⠀⠀⠀⠀⠤⠀⠀⠀ ⠀⠀⠀⠀⣾⡟⠀⠀⠀⠀ ⠀⢰⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇" << endl;
         cout <<u8"  ⠀⠀⠀⠀⠀⠀⠀⠀⠹⠇⠀⠀⠀⠀⠀⣸⣿⠠⢰⣶⠄⠀⠀⠀⢀⣀⠀⢠⠀⠀⢠⡆⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⢀⣀⣙⣿⠁⠀⠀⠀⠀ ⠀⣸⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠇ " << endl;
 
->>>>>>> 26c8c11b236d8fa89651b762203c3449f5ec478c
     }
 
     cout << "Choix de votre hero :" << endl;
@@ -132,13 +131,10 @@ int main()
 
     if (numero == 1)
     {
-<<<<<<< HEAD
         p = new Hero ;
         read(b_var) ;
-=======
 
         read(b_var);
->>>>>>> 26c8c11b236d8fa89651b762203c3449f5ec478c
     }
     /*
     else if (numero == 3)

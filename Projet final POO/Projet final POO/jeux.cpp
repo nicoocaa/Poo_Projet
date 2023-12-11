@@ -139,6 +139,20 @@ int Vilain::degat_recu(int att, int eng) const
 	return degat;
 }
 
+void Hero::revive()
+{
+	int Onlyone = 0;
+	get_vie();
+	while (Onlyone == 0)
+	{
+		if (vie == 0)
+		{
+			vie += 100
+		}
+	}
+	Onlyone += 1;
+}
+
 Hero::Hero() : Personnage(), pts_vie(0), attaque1(0), attaque2(0), attaque3(0), pts_energie(0), defense1(0), defense2(0), defense3(0)
 {
 }
@@ -302,4 +316,3 @@ void energie(int energie) {
 
 	cout << " " << energie << "%" << endl;
 }
->>>>>>> b8e5594083cdf5d1e2b12d1db0d97dd5afe4651d

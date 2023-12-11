@@ -78,7 +78,7 @@ class Hero :public Personnage
 {
 
 private:
-	
+	void revive();
 public:
 
 	Hero();
@@ -105,7 +105,6 @@ public:
 	int get_defense3() const;
 	int degat_recu(int att, int eng) const;
 
-	void revive;
 };
 
 class MBuf: public std::stringbuf {
