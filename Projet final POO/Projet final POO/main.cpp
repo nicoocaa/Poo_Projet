@@ -210,17 +210,6 @@ int main()
    // Personnage perso;
 
     int numero;
-<<<<<<< HEAD
-=======
-
-    Personnage *p = nullptr;
-    bool tour = true;
-    
-    Tour(tour);
-    tour == Tour(tour);
-
-
->>>>>>> 2aa9e5b7cb7571d2c3d552d50fa9aabb03e3fbf1
     int numero2;
     Hero b_var = Hero();
     Vilain a_var = Vilain();
@@ -236,35 +225,11 @@ int main()
 
     if (numero == 1)
     {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-        p = new Vilain ;
-        read(a_var) ;
-
-=======
-<<<<<<< HEAD
-        Vilain a_var = Vilain();
->>>>>>> 2aa9e5b7cb7571d2c3d552d50fa9aabb03e3fbf1
         a_var.set_name("Shrek");
         a_var.set_vie(100);
         a_var.set_energie(50);
 
         system("cls");
-<<<<<<< HEAD
-        //Vilain* p1 = nullptr;
-
-       // p1 = new Vilain ;
-=======
-=======
-<<<<<<< HEAD
-        p = new Vilain ;
-        read(a_var) ;
-=======
->>>>>>> b4550078242912c7ef9a26f4a038a6ccc8ba4126
->>>>>>> ec50ad07099bb734af69cc07e41fa8f981edea14
->>>>>>> 2aa9e5b7cb7571d2c3d552d50fa9aabb03e3fbf1
         read(a_var);
 
 
@@ -303,15 +268,6 @@ int main()
         cout <<u8"  ⠀⠀⠀⠀⠀⠀⠙⢿⣿⡇⠀⠀⠀⠀⠀⢠⣿⠟⠇⠀⠈⠑⢦⣿⠿⠿⠿⠿⠶⢀⢀⣸⠿⣶⣦⣠⡖⠀⠀⠀ ⠀⠀⠀⠀⢀⣿⠀⠀⠀⠀ ⠀⠀⡿⠀⠀⠀⠀⠀⠀⠀⠀⠘⢻⡆" << endl;
         cout <<u8"  ⠀⠀⠀⠀⠀⠀⠀⠀⣼⡇⠀⠀⠀⠀⠀⣸⡗⠀⠀⠀⠀⠀⠀⠙⠷⡄⣀⠀⠀⠻⠟⠃⠀⠀⠀⠀⠤⠀⠀⠀ ⠀⠀⠀⠀⣾⡟⠀⠀⠀⠀ ⠀⢰⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇" << endl;
         cout <<u8"  ⠀⠀⠀⠀⠀⠀⠀⠀⠹⠇⠀⠀⠀⠀⠀⣸⣿⠠⢰⣶⠄⠀⠀⠀⢀⣀⠀⢠⠀⠀⢠⡆⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⢀⣀⣙⣿⠁⠀⠀⠀⠀ ⠀⣸⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠇ " << endl;
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 26c8c11b236d8fa89651b762203c3449f5ec478c
->>>>>>> b4550078242912c7ef9a26f4a038a6ccc8ba4126
->>>>>>> ec50ad07099bb734af69cc07e41fa8f981edea14
->>>>>>> 2aa9e5b7cb7571d2c3d552d50fa9aabb03e3fbf1
     }
 
     cout << "Choix de votre hero :" << endl;
@@ -322,21 +278,10 @@ int main()
 
     if (numero2 == 1)
     {
-<<<<<<< HEAD
-
-       
-=======
-<<<<<<< HEAD
-        p = new Hero ;
-        read(b_var) ;
-=======
-<<<<<<< HEAD
-        Hero b_var = Hero();
->>>>>>> 2aa9e5b7cb7571d2c3d552d50fa9aabb03e3fbf1
         b_var.set_name("Melody");
         b_var.set_vie(100);
         b_var.set_energie(50);
-<<<<<<< HEAD
+
 
         system("cls");
         //Hero* p2 = nullptr;
@@ -344,19 +289,6 @@ int main()
         //p2 = new Hero ;
 
         read(b_var) ;
-=======
-        //b_var.set_defense(10);
-=======
-<<<<<<< HEAD
-        p = new Hero ;
-        read(b_var) ;
-=======
->>>>>>> b4550078242912c7ef9a26f4a038a6ccc8ba4126
->>>>>>> ec50ad07099bb734af69cc07e41fa8f981edea14
-
-        system("cls");
-        read(b_var);
->>>>>>> 2aa9e5b7cb7571d2c3d552d50fa9aabb03e3fbf1
     }
 
     Tour(a_var, b_var);
