@@ -16,15 +16,10 @@ void Personnage::tour(bool tour)
 {
 	if (tour = true)
 	{
-		tour = false
-	}
-	else
+		tour = false;
+	} else
 	{
-		tour = true
-	}
-
-	if (this != nullptr) {
-		this->tour = tour
+		tour = true;
 	}
 }
 
@@ -266,7 +261,7 @@ int Hero::get_defense3() const
 	return defense3;
 }
 
-<<<<<<< HEAD
+
 int Hero::degat_recu(int att, int eng) const
 {
 	int degat;
@@ -274,9 +269,9 @@ int Hero::degat_recu(int att, int eng) const
 	return degat;
 }
 
-=======
 
-void pv(int pv) {
+
+void Personnage::pv(int pv) {
 
 	SetConsoleOutputCP(CP_UTF8);
 	setvbuf(stdout, nullptr, _IONBF, 0);
@@ -311,4 +306,3 @@ void energie(int energie) {
 
 	cout << " " << energie << "%" << endl;
 }
->>>>>>> b8e5594083cdf5d1e2b12d1db0d97dd5afe4651d
