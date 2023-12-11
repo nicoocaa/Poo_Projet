@@ -7,29 +7,30 @@ using namespace std;
 class Personnage {
 
 private:
-	std::string vide;
+	string vide;
 public:
 
 	Personnage();
 	~Personnage();
 
-	virtual std::string get_name() const = 0;
+	virtual string get_name() const = 0;
 	virtual int get_vie() const = 0;
-	virtual int get_attaque1() const=0;
+	virtual int get_attaque1() const = 0;
 	virtual int get_attaque2() const = 0;
 	virtual int get_attaque3() const = 0;
-	virtual int get_energie() const=0;
-	virtual int get_defense1() const=0;
+	virtual int get_energie() const = 0;
+	virtual int get_defense1() const = 0;
 	virtual int get_defense2() const = 0;
 	virtual int get_defense3() const = 0;
-
+	virtual bool tour(bool tour);
+	virtual int degat_recu() const = 0;
 
 };
 
 class Vilain :public Personnage
 {
 private:
-	std::string name;
+	string name;
 	int pts_vie;
 	int attaque1;
 	int attaque2;
@@ -42,7 +43,7 @@ public:
 	Vilain();
 	~Vilain();
 
-	void set_name(std::string name);
+	void set_name(string name);
 	void set_vie(int pts_vie);
 	void set_attaque1(int attaque1);
 	void set_attaque2(int attaque2);
@@ -52,7 +53,7 @@ public:
 	void set_defense2(int defense2);
 	void set_defense3(int defense3);
 
-	std::string get_name() const;
+	string get_name() const;
 	int get_vie() const;
 	int get_attaque1() const;
 	int get_attaque2() const;
@@ -61,13 +62,14 @@ public:
 	int get_defense1() const;
 	int get_defense2() const;
 	int get_defense3() const;
+	int degat_recu(int att, int eng) const;
 };
 
 class Hero :public Personnage
 {
 
 private:
-	std::string name;
+	string name;
 	int pts_vie;
 	int attaque1;
 	int attaque2;
@@ -81,7 +83,7 @@ public:
 	Hero();
 	~Hero();
 
-	void set_name(std::string name);
+	void set_name(string name);
 	void set_vie(int pts_vie);
 	void set_attaque1(int attaque1);
 	void set_attaque2(int attaque2);
@@ -91,7 +93,7 @@ public:
 	void set_defense2(int defense2);
 	void set_defense3(int defense3);
 
-	std::string get_name() const;
+	string get_name() const;
 	int get_vie() const;
 	int get_attaque1() const;
 	int get_attaque2() const;
@@ -100,6 +102,7 @@ public:
 	int get_defense1() const;
 	int get_defense2() const;
 	int get_defense3() const;
+	int degat_recu(int att, int eng) const;
 };
 
 #endif

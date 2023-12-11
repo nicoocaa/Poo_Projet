@@ -4,10 +4,10 @@
 void read(const Personnage& Personnage)
 {
 
-    std::cout << "Voici le nom du personnage : " << Personnage.get_name() << std::endl
-    << "Voici ces points de vie : " << Personnage.get_vie() << std::endl 
-    << "Voici son energie : " << Personnage.get_energie() << std::endl 
-    << "" << std::endl;
+    cout << "Voici le nom du personnage : " << Personnage.get_name() << endl
+    cout << "Voici ces points de vie : " << Personnage.get_vie() << endl 
+    cout << "Voici son energie : " << Personnage.get_energie() << endl 
+    cout << "" << endl;
 }
 
 int main()
