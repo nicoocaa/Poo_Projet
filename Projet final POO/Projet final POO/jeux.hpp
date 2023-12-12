@@ -2,9 +2,8 @@
 #define JEUX
 #include <iostream>
 #include <sstream>
-
+#include <cstdlib>
 #include <Windows.h>
-
 
 using namespace std;
 
@@ -36,11 +35,13 @@ public:
 	virtual string get_name() const = 0;
 	virtual int get_vie() const = 0;
 	virtual int get_energie() const = 0;
+	virtual void set_name(string name) =0;
+	virtual void set_vie(int pts_vie) =0;
+
+	virtual void set_energie(int pts_energie)=0;
 
 	virtual void energie()const =0;
 	virtual void pv() const =0;
-
-
 
 };
 
@@ -80,9 +81,6 @@ private:
 	int pts_vie;
 
 	int pts_energie;
-	
-
-	void revive();
 
 public:
 
@@ -102,6 +100,7 @@ public:
 	int get_energie() const;
 	void energie() const;
 	void pv() const;
+	void revive();
 
 };
 

@@ -1,10 +1,11 @@
-﻿#include "jeux.hpp"
+﻿#include <cstdlib>
+#include "jeux.hpp"
 #include <sstream>
 #include <iostream>
-
 #include <Windows.h>
 
 using namespace std;
+
 
 void read(const Personnage& Personnage)
 {
@@ -15,7 +16,7 @@ void read(const Personnage& Personnage)
 }
 
 
-void game1(Vilain& J1, Hero& J2)
+void game1(Personnage& J1, Personnage& J2)
 {
     SetConsoleOutputCP(CP_UTF8);
     setvbuf(stdout, nullptr, _IONBF, 0);
@@ -27,177 +28,136 @@ void game1(Vilain& J1, Hero& J2)
     int degats = 0;
     int bouclier = 0;
 
-    while (J2.get_vie() != 0 && J1.get_vie() != 0) 
-    {
-        J2.pv();
-        J2.energie();
-        J1.pv();
-        J1.energie();
-        cout << "Vilain : " << J1.get_vie() << " PV    " << J1.get_energie() << " Energie  ||   Hero: " << J2.get_vie() << " PV    " << J2.get_energie() << endl;
-        cout << "" << endl;
+    cout << "" << endl;
+    cout << J2.get_name() << endl;
+    J2.pv();
+    J2.energie();
+    std::cout << std::endl;
+    cout << J1.get_name() << endl;
+    J1.pv();
+    J1.energie();
+    cout << "" << endl;
 
-        cout << "combien de pv ?" << endl;
-        cout << "" << endl;
-        cout << "Attaque 1 (20)" << endl;
-        cout << "Attaque 2 (40)" << endl;
-        cout << "Attaque 3 : (60)" << endl;
-        cout << "" << endl;
+    cout << "Combien de pv voulez vous attaquer ?" << endl;
+    cout << "" << endl;
+    cout << "Attaque 1 (20)" << endl;
+    cout << "Attaque 2 (40)" << endl;
+    cout << "Attaque 3 (60)" << endl;
+    cout << "" << endl;
 
-        int choix = 0;
-        cin >> choix;
-        cout << "" << endl;
+    int choix = 0;
+    cin >> choix;
+    cout << "" << endl;
 
-        if (choix == 1) {
-            vie -= 20;
-            degats = 20;
+    if (choix == 1) {
+        vie -= 20;
+        degats = 20;
 
-        }
-        if (choix == 2) {
-            vie -= 40;
-            degats = 40;
-
-        }
-        if (choix == 3) {
-            vie -= 60;
-            degats = 60;
-
-        }
-        J2.pv();
-        cout << "Au Tour du hero pour se defendre" << endl;
-        cout << "" << endl;
-        cout << "Combien d'energie ?" << endl;
-        cout << "1 : 20" << endl;
-        cout << "2 : 30" << endl;
-        cout << "3 : 40" << endl;
-        cout << "" << endl;
-
-        int choix2 = 0;
-        cin >> choix2;
-        cout << "" << endl;
-
-        if (choix2 == 1) {
-            energie -= 20;
-            bouclier = 20;
-            J2.set_energie(energie);
-        }
-        if (choix2 == 2) {
-            energie -= 30;
-            bouclier = 30;
-            J2.set_energie(energie);
-        }
-        if (choix2 == 3) {
-            energie -= 40;
-            bouclier = 40;
-            J2.set_energie(energie);
-        }
-        J2.set_vie(J2.get_vie() - (degats - bouclier));
-
-        cout << "Le Hero a subit " << degats - bouclier << " de degats, il lui reste " << J2.get_vie() << " points de vie." << endl;
-
-        break;
     }
+    if (choix == 2) {
+        vie -= 40;
+        degats = 40;
+
+    }
+    if (choix == 3) {
+        vie -= 60;
+        degats = 60;
+
+    }
+    system("cls");
+    cout << "Au Tour de " <<J2.get_name()<<" pour se defendre" << endl;
+    cout << "" << endl;
+    cout << J2.get_name() << endl;
+    J2.pv();
+    J2.energie();
+    std::cout << std::endl;
+    cout << J1.get_name() << endl;
+    J1.pv();
+    J1.energie();
+    cout << "" << endl;
+    cout << "Combien d'energie voulez vous utiliser ?" << endl;
+    cout << "1 : 20" << endl;
+    cout << "2 : 30" << endl;
+    cout << "3 : 40" << endl;
+    cout << "" << endl;
+
+    int choix2 = 0;
+    cin >> choix2;
+    cout << "" << endl;
+
+    if (choix2 == 1) {
+        energie -= 20;
+        bouclier = 20;
+        J2.set_energie(energie);
+    }
+    if (choix2 == 2) {
+        energie -= 30;
+        bouclier = 30;
+        J2.set_energie(energie);
+    }
+    if (choix2 == 3) {
+        energie -= 40;
+        bouclier = 40;
+        J2.set_energie(energie);
+    }
+    J2.set_vie(J2.get_vie() - (degats - bouclier));
+
+    cout << "" << endl;
+    cout << J2.get_name() << endl;
+    J2.pv();
+    J2.energie();
+    std::cout << std::endl;
+    cout << J1.get_name() << endl;
+    J1.pv();
+    J1.energie();
+    cout << "" << endl;
+    cout << J2.get_name() <<" a subit " << degats - bouclier << " de degats, il lui reste " << J2.get_vie() << " points de vie." << endl;
+    Sleep(4000);
+    system("cls");
+      
 }
 
-void game2(Hero& J1, Vilain& J2)
+
+void Tour(bool tour, bool gameover, Vilain a_var,Hero b_var)
 {
     SetConsoleOutputCP(CP_UTF8);
     setvbuf(stdout, nullptr, _IONBF, 0);
     MBuf buf;
-    std::cout.rdbuf(&buf);
-
-
-    int vie = J2.get_vie();
-    int energie = J2.get_energie();
-    int degats = 0;
-    int bouclier = 0;
-
-    while (J2.get_vie() != 0 && J1.get_vie() != 0)
-    {
-        cout << "" << endl;
-        J2.pv();
-        J2.energie();
-        J1.pv();
-        J1.energie();
-        cout << "Vilain : " << J2.get_vie() << " PV    " << J2.get_energie() << " Energie  ||   Hero: " << J1.get_vie() << " PV    " << J1.get_energie() << endl;
-
-        cout << "" << endl;
-
-        cout << "combien de pv ?" << endl;
-        cout << "" << endl;
-        cout << "Attaque 1 (20)" << endl;
-        cout << "Attaque 2 (40)" << endl;
-        cout << "Attaque 3 : (60)" << endl;
-
-        int choix = 0;
-        cin >> choix;
-
-        if (choix == 1) {
-            vie -= 20;
-            degats = 20;
-        }
-        if (choix == 2) {
-            vie -= 40;
-            degats = 40;
-        }
-        if (choix == 3) {
-            vie -= 60;
-            degats = 60;
-        }
-
-        cout << "Au Tour du vilain pour se defendre" << endl;
-        cout << "Combien d'energie ?" << endl;
-        cout << "1 : 20" << endl;
-        cout << "2 : 30" << endl;
-        cout << "3 : 40" << endl;
-
-        int choix2 = 0;
-        cin >> choix2;
-
-        if (choix2 == 1) {
-            energie -= 20;
-            bouclier = 20;
-            J2.set_energie(energie);
-        }
-        if (choix2 == 2) {
-            energie -= 30;
-            bouclier = 30;
-            J2.set_energie(energie);
-        }
-        if (choix2 == 3) {
-            energie -= 40;
-            bouclier = 40;
-            J2.set_energie(energie);
-        }
-        J2.set_vie(J2.get_vie() - (degats - bouclier));
-
-        cout << "Le Vilain à subit " << degats - bouclier << " de degats, il lui reste " << J2.get_vie() << " points de vie." << endl;
-        break;
-    }
-
-}
-
-void Tour(Vilain a_var,Hero b_var)
-{
-    bool tour = true;
-    bool gameover = false;
+    cout.rdbuf(&buf);
 
     while (gameover ==false) {
-        std::cout << "" << std::endl;
         if (tour==true) {
-            std::cout << "Tour du Joueur 1." << std::endl;
-            std::cout << "" << std::endl;
-            game1(a_var, b_var);
+            if (a_var.get_vie() <= 0 || b_var.get_vie() <= 0)
+            {
+                gameover = true;
+                Tour(tour, gameover, a_var, b_var);
+            }
+            else {
+                std::cout << u8"Tour du Vilain" << std::endl;
+                game1(a_var, b_var);
+                tour = false;
+                Tour(tour, gameover, a_var, b_var);
+            }
         }
         else {
-            std::cout << "Tour du joueur 2." << std::endl;
-            std::cout << "" << std::endl;
-            game2(b_var, a_var);
+            if(a_var.get_vie() <= 0 || b_var.get_vie() <= 0)
+            {
+                gameover = true;
+                Tour(tour, gameover,a_var, b_var);
+            }
+            else {
+                std::cout << u8"Tour du Hero" << std::endl;
+                game1(b_var, a_var);
+                tour = true;
+                Tour(tour, gameover, a_var, b_var);
+            }
         }
-
-        tour = !tour;  // Changer le tour
+    }
+    if (gameover == true)
+    {
+        cout << "La partie est terminé.";
     }
 }
-
 
 
 
@@ -207,13 +167,13 @@ int main()
     setvbuf(stdout, nullptr, _IONBF, 0);
     MBuf buf;
 
-   // Personnage perso;
+   // Personnage perso    
 
     int numero;
     int numero2;
     Hero b_var = Hero();
     Vilain a_var = Vilain();
-
+    bool gameover = false;
     bool tour = true;
 
     cout << "Choix de votre vilain :" << endl;
@@ -288,9 +248,13 @@ int main()
 
         //p2 = new Hero ;
 
-        read(b_var) ;
+        read(b_var);
     }
-
-    Tour(a_var, b_var);
-  
+    
+    cout.flush();
+    Sleep(4000);
+    system("cls");
+    Tour(tour, gameover, a_var, b_var);
+    
+    return 0;
 }

@@ -61,12 +61,6 @@ Hero::Hero() : Personnage(), pts_vie(0), pts_energie(0)
 	
 }
 
-int Vilain::degat_recu(int att, int eng) const
-{
-	int degat;
-	degat = att - eng;
-	return degat;
-}
 
 void Hero::revive()
 {
@@ -74,10 +68,10 @@ void Hero::revive()
 	get_vie();
 	while (Onlyone == 0)
 	{
-		if (vie == 0)
-		{
-			vie += 100
-		}
+		//if (vie == 0)
+		//{
+		//.	vie += 100
+		//}
 	}
 	Onlyone += 1;
 }
