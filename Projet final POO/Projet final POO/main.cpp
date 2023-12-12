@@ -170,22 +170,36 @@ void Tour(bool tour, bool gameover, Personnage* a_var,Personnage* b_var)
     if (gameover == true)
     {
         if (a_var->get_vie() <= 0) {
+
+            cout << u8"     ___    __    _  _   ____     __   _  _  ____  ____      " << endl;
+            cout << u8"    / __)  / _\  ( \/ ) (  __)   /  \ / )( \(  __)(  _ \     " << endl;
+            cout << u8"   ( (_ \ /    \ / \/ \  ) _)   (  O )\ \/ / ) _)  )   /     " << endl;
+            cout << u8"    \___/ \_/\_/ \_)(_/ (____)   \__/  \__/ (____)(__\_)     " << endl;
+            cout << u8"                                                             " << endl;
+
             cout << "La partie est termine." << endl;
             cout << "Le hero " << b_var->get_name() << " a gagner avec " << a_var->get_vie() << " PV restants" << endl;
             delete a_var;
             delete b_var;
-            Personnage* b_var = nullptr;
-            Personnage* a_var = nullptr;
+            b_var = nullptr;
+            a_var = nullptr;
             Sleep(9000);
             exit(0);
         }
         if (b_var->get_vie() <= 0) {
+
+            cout << u8"     ___    __    _  _   ____     __   _  _  ____  ____      " << endl;
+            cout << u8"    / __)  / _\  ( \/ ) (  __)   /  \ / )( \(  __)(  _ \     " << endl;
+            cout << u8"   ( (_ \ /    \ / \/ \  ) _)   (  O )\ \/ / ) _)  )   /     " << endl;
+            cout << u8"    \___/ \_/\_/ \_)(_/ (____)   \__/  \__/ (____)(__\_)     " << endl;
+            cout << u8"                                                             " << endl;
+
             cout << "La partie est termine." << endl;
             cout << "Le vilain " << a_var->get_name() << " a gagner avec " << a_var->get_vie() << " PV restants" << endl;
             delete a_var;
             delete b_var;
-            Personnage* b_var = nullptr;
-            Personnage* a_var = nullptr;
+            b_var = nullptr;
+            a_var = nullptr;
             Sleep(9000);
             exit(0);
         }
