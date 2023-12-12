@@ -172,14 +172,20 @@ void Tour(bool tour, bool gameover, Personnage* a_var,Personnage* b_var)
         if (a_var->get_vie() <= 0) {
             cout << "La partie est termine." << endl;
             cout << "Le hero " << b_var->get_name() << " a gagner avec " << a_var->get_vie() << " PV restants" << endl;
-            //cout << "Appuyé sur entree pour quitter" << endl;
+            delete a_var;
+            delete b_var;
+            Personnage* b_var = nullptr;
+            Personnage* a_var = nullptr;
             Sleep(9000);
             exit(0);
         }
         if (b_var->get_vie() <= 0) {
             cout << "La partie est termine." << endl;
             cout << "Le vilain " << a_var->get_name() << " a gagner avec " << a_var->get_vie() << " PV restants" << endl;
-            //cout << "Appuyé sur entree pour quitter" << endl;
+            delete a_var;
+            delete b_var;
+            Personnage* b_var = nullptr;
+            Personnage* a_var = nullptr;
             Sleep(9000);
             exit(0);
         }
