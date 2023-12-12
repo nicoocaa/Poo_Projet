@@ -16,6 +16,13 @@ Vilain::~Vilain()
 {
 }
 
+void Vilain::set_pseudo(string pseudo)
+{
+	if (this != nullptr) {
+		this->pseudo = pseudo;
+	}
+}
+
 void Vilain::set_name(string name)
 {
 	if (this != nullptr) {
@@ -46,6 +53,11 @@ string Vilain::get_name() const
 int Vilain::get_vie() const
 {
 	return pts_vie;
+}
+
+string Vilain::get_pseudo() const
+{
+	return pseudo;
 }
 
 
@@ -80,6 +92,13 @@ Hero::~Hero()
 {
 }
 
+void Hero::set_pseudo(string pseudo)
+{
+	if (this != nullptr) {
+		this->pseudo = pseudo;
+	}
+}
+
 void Hero::set_name(string name)
 {
 	if (this != nullptr) {
@@ -109,6 +128,11 @@ string Hero::get_name() const
 int Hero::get_vie() const
 {
 	return pts_vie;
+}
+
+string Hero::get_pseudo() const
+{
+	return pseudo;
 }
 
 int Hero::get_energie() const

@@ -23,7 +23,7 @@ class Personnage
 private:
 	string name;
 	int pts_vie;
-
+	string pseudo;
 	int pts_energie;
 
 
@@ -37,9 +37,9 @@ public:
 	virtual int get_energie() const = 0;
 	virtual void set_name(string name) =0;
 	virtual void set_vie(int pts_vie) =0;
-
+	virtual string get_pseudo() const=0;
 	virtual void set_energie(int pts_energie)=0;
-
+	virtual void set_pseudo(string pseudo) =0;
 	virtual void energie()const =0;
 	virtual void pv() const =0;
 
@@ -50,13 +50,14 @@ class Vilain :public Personnage
 private:
 	string name;
 	int pts_vie;
-
+	string pseudo;
 	int pts_energie;
 
 public:
 	Vilain();
 	~Vilain();
 
+	void set_pseudo(string pseudo);
 	void set_name(string name);
 	void set_vie(int pts_vie);
 
@@ -65,7 +66,7 @@ public:
 
 	string get_name() const;
 	int get_vie() const;
-
+	string get_pseudo() const;
 	int get_energie() const;
 	void energie() const;
 	void pv() const;
@@ -79,7 +80,7 @@ private:
 
 	string name;
 	int pts_vie;
-
+	string pseudo;
 	int pts_energie;
 
 public:
@@ -87,6 +88,7 @@ public:
 	Hero();
 	~Hero(); 
 
+	void set_pseudo(string pseudo);
 	void set_name(string name);
 	void set_vie(int pts_vie);
 
@@ -96,7 +98,7 @@ public:
 	string get_name() const;
 	int get_vie() const;
 
-
+	string get_pseudo() const;
 	int get_energie() const;
 	void energie() const;
 	void pv() const;
